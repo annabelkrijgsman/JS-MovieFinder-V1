@@ -30,7 +30,7 @@ addMoviesToDOM(movies);
 const handleOnChangeEvent = (radioBtn) => {
     switch (radioBtn.target.value) {
         case 'latest-movies':
-            filterLastestMovies();
+            filterLatestMovies();
             break;
         case 'avengers-movies':
             filterMovies('Avengers');
@@ -56,7 +56,7 @@ const filterMovies = (wordInMovieTitle) => {
 };
 
 // Filter movies by year
-const filterLastestMovies = () => {
+const filterLatestMovies = () => {
     const filteredLatestMovies = movies.filter(movie => movie.Year >= 2014);
     addMoviesToDOM(filteredLatestMovies);
 };
