@@ -1,10 +1,8 @@
-// Get elements
 const ulMovieList = document.querySelector('#movie-list');
 const movieFilterList = document.querySelector('#movie-filter-list');
 const addEventListenerToRadioButtons = document.getElementsByName('movie-filter');
-const searchField = document.getElementById("search-movies");
+const addEventListenerToSearchField = document.querySelector("#search-movies");
 
-// Create list items for movies
 const addMoviesToDOM = (movies) => {
     ulMovieList.innerHTML = '';
     movies.map(movie => {
@@ -26,7 +24,6 @@ const addMoviesToDOM = (movies) => {
 
 addMoviesToDOM(movies);
 
-// Handle onChange event on radiobuttons
 const handleOnChangeEvent = (radioBtn) => {
     switch (radioBtn.target.value) {
         case 'latest-movies':
@@ -45,34 +42,29 @@ const handleOnChangeEvent = (radioBtn) => {
             filterMovies('Princess');
             break;
         default:
-            console.log('default');
+            addMoviesToDOM(movies);
     }
 };
 
-// Filter movies by title
 const filterMovies = (wordInMovieTitle) => {
     const filteredMovies = movies.filter(movie => movie.Title.includes(wordInMovieTitle));
     addMoviesToDOM(filteredMovies);
 };
 
-// Filter movies by year
 const filterLatestMovies = () => {
     const filteredLatestMovies = movies.filter(movie => movie.Year >= 2014);
     addMoviesToDOM(filteredLatestMovies);
 };
 
-// Search movies
-function searchMovies() {
-    const searchedMovies = movies.filter(movie => movie.Title.toLowerCase().includes(searchField.value.toLowerCase()));
+const searchMovies = () => {
+    const searchedMovies = movies.filter(movie => movie.Title.toLowerCase().includes(addEventListenerToSearchField.value.toLowerCase()));
     addMoviesToDOM(searchedMovies);
-}
+};
 
-// Add onChange to all radiobuttons
 addEventListenerToRadioButtons.forEach((radio) => {
     radio.addEventListener('change', function (radioBtn) {
         handleOnChangeEvent(radioBtn);
     });
 });
 
-// Add onSearch to textfield
-searchField.addEventListener('search', searchMovies);
+addEventListenerToSearchField.addEventListener('search', searchMovies);
