@@ -5,7 +5,11 @@
     padding: 0;
 }
 
-.grid-container {
+body {
+    padding: 20px 25px;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
     height: 100%;
     display: grid;
     grid-gap: 2em;
@@ -15,13 +19,6 @@
         "h h h h h h h h h h h h"
         "n n n n n n n n n n n n"
         "m m m m m m m m m m m m";
-}
-
-body {
-    padding: 20px 25px;
-    background-color: #000;
-    color: #fff;
-    font-family: 'Open Sans', sans-serif;
 
     header {
         grid-area: h;
