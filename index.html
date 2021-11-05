@@ -14,32 +14,21 @@
     <header>
         <h1>Welcome at the Winc Movie Finder</h1>
     </header>
-    <nav>
-        <span>
-            <input type="radio" name="movie-selection" id="latest-movies" value="">
-            <label for="latest-movies">Latest movies</label>
-        </span>
-        <span>
-            <input type="radio" name="movie-selection" id="avengers" value="">
-            <label for="avengers">Avengers</label>
-        </span>
-        <span>
-            <input type="radio" name="movie-selection" id="x-men" value="">
-            <label for="x-men">X-Men</label>
-        </span>
-        <span>
-            <input type="radio" name="movie-selection" id="batman" value="">
-            <label for="batman">Batman</label>
-        </span>
-        <span>
-            <input type="radio" name="movie-selection" id="princess" value="">
-            <label for="princess">Princess</label>
-        </span>
+    <nav id="movie-filter-list">
+        <input type="radio" name="movie-filter" id="latest-movies" value="latest-movies">
+        <label for="latest-movies">Latest movies</label>
+        <input type="radio" name="movie-filter" id="avengers-movies" value="avengers-movies">
+        <label for="avengers-movies">Avengers</label>
+        <input type="radio" name="movie-filter" id="x-men-movies" value="x-men-movies">
+        <label for="x-men-movies">X-Men</label>
+        <input type="radio" name="movie-filter" id="batman-movies" value="batman-movies">
+        <label for="batman-movies">Batman</label>
+        <input type="radio" name="movie-filter" id="princess-movies" value="princess-movies">
+        <label for="princess-movies">Princess</label>
+        <input type="search" name="search-movies" id="search-movies" placeholder="Search movies...">
     </nav>
     <main>
-        <ul id="movie-list">
-
-        </ul>
+        <ul id="movie-list"></ul>
     </main>
 </body>
 <footer>
