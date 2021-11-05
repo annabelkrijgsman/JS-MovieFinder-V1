@@ -63,7 +63,7 @@ const filterLastestMovies = () => {
 
 // Search movies
 function searchMovies() {
-    const searchedMovies = movies.filter(movie => movie.Title.includes(searchField.value));
+    const searchedMovies = movies.filter(movie => movie.Title.toLowerCase().includes(searchField.value.toLowerCase()));
     addMoviesToDOM(searchedMovies);
 }
 
