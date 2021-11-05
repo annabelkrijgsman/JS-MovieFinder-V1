@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    height: 100%;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        "h h h h h h h h h h h h"
+        "n n n n n n n n n n n n"
+        "m m m m m m m m m m m m";
+}
+
+body {
+    padding: 20px 25px;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+
+    header {
+        grid-area: h;
+        text-align: center;
+    }
+
+    nav {
+        grid-area: n;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+
+    main {
+        grid-area: m;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-evenly;
+            
+            li {
+                list-style: none;
+            }
+        }
+    }
+}
+
